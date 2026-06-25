@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NexusPay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .login-blob-1 {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+            z-index: 0;
+            animation: float 10s ease-in-out infinite;
+        }
+        .login-blob-2 {
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.2;
+            z-index: 0;
+            animation: float 12s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        .login-card {
+            width: 100%;
+            max-width: 440px;
+            z-index: 10;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .login-header .logo {
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        .login-header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .login-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .input-group label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-wrapper ion-icon {
+            position: absolute;
+            left: 16px;
+            color: var(--text-secondary);
+            font-size: 20px;
+        }
+        .input-wrapper input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--panel-border);
+            padding: 14px 16px 14px 48px;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Outfit';
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .input-wrapper input:focus {
+            border-color: var(--accent-primary);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+        .login-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+        .login-actions a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .login-actions a:hover {
+            text-decoration: underline;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-blob-1"></div>
+    <div class="login-blob-2"></div>
+    
+    <div class="login-card glass-panel" style="animation: fadeIn 0.6s ease forwards;">
+        <div class="login-header">
+            <div class="logo">
+                <ion-icon name="wallet"></ion-icon>
+                <span>NexusPay</span>
+            </div>
+            <h1>Welcome Back</h1>
+            <p>Enter your credentials to access your account.</p>
+        </div>
+        
+        <form class="login-form" action="index.html" method="GET">
+            <div class="input-group">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" placeholder="Enter your email" value="alex.morgan@example.com" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <div class="input-wrapper">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" placeholder="••••••••" value="password123" required>
+                </div>
+            </div>
+            <div class="login-actions">
+                <label class="checkbox-group">
+                    <input type="checkbox" checked>
+                    Remember me
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="primary-btn w-full" style="margin-top: 12px; padding: 16px; font-size: 16px;">
+                Sign In <ion-icon name="log-in-outline"></ion-icon>
+            </button>
+        </form>
+        
+        <p style="text-align: center; font-size: 14px; margin-top: 24px; color: var(--text-secondary);">
+            Don't have an account? <a href="#" style="color: var(--accent-primary); text-decoration: none; font-weight: 500;">Sign up</a>
+        </p>
+    </div>
+</body>
+</html>

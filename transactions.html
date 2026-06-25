@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Credit Card Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .full-tx-list {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+        .tx-filters {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--panel-border);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="wallet"></ion-icon>
+                <span>NexusPay</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item"><ion-icon name="grid-outline"></ion-icon> Dashboard</a>
+                <a href="cards.html" class="nav-item"><ion-icon name="card-outline"></ion-icon> My Cards</a>
+                <a href="transactions.html" class="nav-item active"><ion-icon name="swap-horizontal-outline"></ion-icon> Transactions</a>
+                <a href="analytics.html" class="nav-item"><ion-icon name="stats-chart-outline"></ion-icon> Analytics</a>
+                <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/150?img=68" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="user-name">Alex Morgan</span>
+                    <span class="user-role">Premium Member</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search transactions...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><ion-icon name="notifications-outline"></ion-icon><span class="badge">3</span></button>
+                    <button class="icon-btn"><ion-icon name="download-outline"></ion-icon></button>
+                    <button class="mobile-menu-btn"><ion-icon name="menu-outline"></ion-icon></button>
+                </div>
+            </header>
+
+            <div>
+                <h2>Transaction History</h2>
+                <div class="full-tx-list">
+                    <div class="tx-filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Income</button>
+                        <button class="filter-btn">Expenses</button>
+                        <button class="filter-btn">Transfers</button>
+                    </div>
+                    <!-- Reuse the list from script.js target, we can hardcode for the static page -->
+                    <div id="transaction-list" class="transaction-list" style="height: 60vh;">
+                        <!-- The JS script will automatically populate this when loaded! -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Adding more fake txs to fill the screen since script.js only creates 5.
+        // script.js will run and add the 5, let's append more manually or let script do it.
+    </script>
+</body>
+</html>
