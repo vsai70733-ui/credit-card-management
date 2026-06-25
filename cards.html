@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cards - Credit Card Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .cards-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .add-card-placeholder {
+            border: 2px dashed var(--panel-border);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            aspect-ratio: 1.586;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+        }
+        .add-card-placeholder:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            background: rgba(59, 130, 246, 0.05);
+        }
+        .add-card-placeholder ion-icon {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="wallet"></ion-icon>
+                <span>NexusPay</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item"><ion-icon name="grid-outline"></ion-icon> Dashboard</a>
+                <a href="cards.html" class="nav-item active"><ion-icon name="card-outline"></ion-icon> My Cards</a>
+                <a href="transactions.html" class="nav-item"><ion-icon name="swap-horizontal-outline"></ion-icon> Transactions</a>
+                <a href="analytics.html" class="nav-item"><ion-icon name="stats-chart-outline"></ion-icon> Analytics</a>
+                <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/150?img=68" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="user-name">Alex Morgan</span>
+                    <span class="user-role">Premium Member</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search cards...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><ion-icon name="notifications-outline"></ion-icon><span class="badge">3</span></button>
+                    <button class="primary-btn"><ion-icon name="add-outline"></ion-icon> Add Card</button>
+                    <button class="mobile-menu-btn"><ion-icon name="menu-outline"></ion-icon></button>
+                </div>
+            </header>
+
+            <div>
+                <h2>Manage Cards</h2>
+                <div class="cards-page-grid">
+                    <!-- Physical Card -->
+                    <div class="credit-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-bg"></div>
+                                <div class="card-top">
+                                    <ion-icon name="git-commit-outline" class="chip-icon"></ion-icon>
+                                    <ion-icon name="wifi-outline" class="contactless"></ion-icon>
+                                </div>
+                                <div class="card-number">
+                                    <span>4532</span>
+                                    <span>1289</span>
+                                    <span>4085</span>
+                                    <span>3901</span>
+                                </div>
+                                <div class="card-bottom">
+                                    <div class="card-holder"><span class="label">Card Holder</span><span class="value">ALEX MORGAN</span></div>
+                                    <div class="card-expires"><span class="label">Expires</span><span class="value">08/29</span></div>
+                                    <div class="card-brand"><div class="mastercard-logo"><div class="circle red"></div><div class="circle yellow"></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Virtual Card -->
+                    <div class="credit-card">
+                        <div class="card-inner">
+                            <div class="card-front" style="background: linear-gradient(135deg, #10B981, #059669);">
+                                <div class="card-bg"></div>
+                                <div class="card-top">
+                                    <span style="font-weight: 600; font-size: 14px;">VIRTUAL CARD</span>
+                                </div>
+                                <div class="card-number">
+                                    <span>5441</span>
+                                    <span>****</span>
+                                    <span>****</span>
+                                    <span>8821</span>
+                                </div>
+                                <div class="card-bottom">
+                                    <div class="card-holder"><span class="label">Status</span><span class="value">ACTIVE</span></div>
+                                    <div class="card-expires"><span class="label">Expires</span><span class="value">12/25</span></div>
+                                    <div class="card-brand"><div class="mastercard-logo"><div class="circle red"></div><div class="circle yellow"></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-card-placeholder">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        <h3>Apply for new card</h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

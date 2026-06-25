@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="wallet"></ion-icon>
+                <span>NexusPay</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active"><ion-icon name="grid-outline"></ion-icon> Dashboard</a>
+                <a href="cards.html" class="nav-item"><ion-icon name="card-outline"></ion-icon> My Cards</a>
+                <a href="transactions.html" class="nav-item"><ion-icon name="swap-horizontal-outline"></ion-icon> Transactions</a>
+                <a href="analytics.html" class="nav-item"><ion-icon name="stats-chart-outline"></ion-icon> Analytics</a>
+                <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/150?img=68" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="user-name">Alex Morgan</span>
+                    <span class="user-role">Premium Member</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search transactions or cards...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><ion-icon name="notifications-outline"></ion-icon><span class="badge">3</span></button>
+                    <button class="primary-btn"><ion-icon name="add-outline"></ion-icon> Add Card</button>
+                    <button class="mobile-menu-btn"><ion-icon name="menu-outline"></ion-icon></button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-grid">
+                <!-- Cards Section -->
+                <section class="cards-section glass-panel">
+                    <div class="section-header">
+                        <h2>My Cards</h2>
+                        <div class="card-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <!-- 3D Card -->
+                        <div class="credit-card" id="credit-card">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="card-bg"></div>
+                                    <div class="card-top">
+                                        <ion-icon name="git-commit-outline" class="chip-icon"></ion-icon>
+                                        <ion-icon name="wifi-outline" class="contactless"></ion-icon>
+                                    </div>
+                                    <div class="card-number">
+                                        <span>4532</span>
+                                        <span>1289</span>
+                                        <span>4085</span>
+                                        <span>3901</span>
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-holder">
+                                            <span class="label">Card Holder</span>
+                                            <span class="value">ALEX MORGAN</span>
+                                        </div>
+                                        <div class="card-expires">
+                                            <span class="label">Expires</span>
+                                            <span class="value">08/29</span>
+                                        </div>
+                                        <div class="card-brand">
+                                            <div class="mastercard-logo">
+                                                <div class="circle red"></div>
+                                                <div class="circle yellow"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-glare"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn"><ion-icon name="lock-closed-outline"></ion-icon> Lock</button>
+                        <button class="action-btn"><ion-icon name="options-outline"></ion-icon> Limits</button>
+                        <button class="action-btn"><ion-icon name="refresh-outline"></ion-icon> Replace</button>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="stat-card glass-panel">
+                        <div class="stat-icon income"><ion-icon name="arrow-down-outline"></ion-icon></div>
+                        <div class="stat-details">
+                            <span class="stat-label">Total Income</span>
+                            <h3 class="stat-value">$12,450.00</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <div class="stat-icon expense"><ion-icon name="arrow-up-outline"></ion-icon></div>
+                        <div class="stat-details">
+                            <span class="stat-label">Total Expense</span>
+                            <h3 class="stat-value">$4,260.50</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-panel highlight">
+                        <div class="stat-bg-blob"></div>
+                        <div class="stat-details">
+                            <span class="stat-label">Available Balance</span>
+                            <h3 class="stat-value">$8,189.50</h3>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%;"></div>
+                            </div>
+                            <span class="limit-text">65% of monthly limit</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transactions Section -->
+                <section class="transactions-section glass-panel">
+                    <div class="section-header">
+                        <h2>Recent Transactions</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="transaction-list" id="transaction-list">
+                        <!-- Transactions will be populated by JS -->
+                    </div>
+                </section>
+                
+                <!-- Quick Send Section -->
+                <section class="quick-send-section glass-panel">
+                    <div class="section-header">
+                        <h2>Quick Transfer</h2>
+                    </div>
+                    <div class="recent-contacts">
+                        <div class="contact">
+                            <div class="contact-avatar add"><ion-icon name="add-outline"></ion-icon></div>
+                            <span>Add</span>
+                        </div>
+                        <div class="contact">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Contact">
+                            <span>Emma</span>
+                        </div>
+                        <div class="contact">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="Contact">
+                            <span>Liam</span>
+                        </div>
+                        <div class="contact">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="Contact">
+                            <span>Sophia</span>
+                        </div>
+                    </div>
+                    <div class="transfer-form">
+                        <div class="amount-input">
+                            <span class="currency">$</span>
+                            <input type="number" placeholder="0.00">
+                        </div>
+                        <button class="primary-btn w-full">Send Money <ion-icon name="paper-plane-outline"></ion-icon></button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

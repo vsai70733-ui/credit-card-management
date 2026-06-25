@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Credit Card Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .chart-container {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 32px;
+            margin-top: 24px;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            padding-bottom: 60px;
+            position: relative;
+        }
+        .chart-bar-wrapper {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+        }
+        .chart-bar {
+            width: 100%;
+            max-width: 60px;
+            background: linear-gradient(180deg, var(--accent-primary) 0%, rgba(59, 130, 246, 0.2) 100%);
+            border-radius: 8px 8px 0 0;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .chart-bar:hover {
+            opacity: 0.8;
+            background: linear-gradient(180deg, var(--accent-secondary) 0%, rgba(139, 92, 246, 0.2) 100%);
+        }
+        .chart-label {
+            position: absolute;
+            bottom: -30px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .chart-value {
+            position: absolute;
+            top: -25px;
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .chart-bar:hover .chart-value {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="wallet"></ion-icon>
+                <span>NexusPay</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item"><ion-icon name="grid-outline"></ion-icon> Dashboard</a>
+                <a href="cards.html" class="nav-item"><ion-icon name="card-outline"></ion-icon> My Cards</a>
+                <a href="transactions.html" class="nav-item"><ion-icon name="swap-horizontal-outline"></ion-icon> Transactions</a>
+                <a href="analytics.html" class="nav-item active"><ion-icon name="stats-chart-outline"></ion-icon> Analytics</a>
+                <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/150?img=68" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="user-name">Alex Morgan</span>
+                    <span class="user-role">Premium Member</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search analytics...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><ion-icon name="notifications-outline"></ion-icon><span class="badge">3</span></button>
+                    <button class="mobile-menu-btn"><ion-icon name="menu-outline"></ion-icon></button>
+                </div>
+            </header>
+
+            <div>
+                <h2>Spending Analytics (Last 6 Months)</h2>
+                
+                <div class="chart-container">
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 30%;"><div class="chart-value">$1.2k</div></div>
+                        <div class="chart-label">May</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 45%;"><div class="chart-value">$1.8k</div></div>
+                        <div class="chart-label">Jun</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 70%;"><div class="chart-value">$2.9k</div></div>
+                        <div class="chart-label">Jul</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 40%;"><div class="chart-value">$1.6k</div></div>
+                        <div class="chart-label">Aug</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 85%;"><div class="chart-value">$3.5k</div></div>
+                        <div class="chart-label">Sep</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 60%;"><div class="chart-value">$2.4k</div></div>
+                        <div class="chart-label">Oct</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
